@@ -1,0 +1,747 @@
+@charset "utf-8";
+
+
+/**
+@mixin tabsradius($br){
+	$br $br 0 0;
+}
+*/
+$baseFont:16;
+$borderSmallWidth:0.35px;
+$statusLineHeight:1.5;
+$statusBarHeight:(($baseFont+2)*$statusLineHeight)+2;
+$bgto: #ddd;
+$border-light: #dbdbdb;
+$borderCol:$borderSmallWidth dotted #eee;
+$buttonSun:#ffdd57;
+$cell-border: 1px solid grey;
+$cellPadding: 0px 0.75rem;
+$headPadding: 0.35rem 0.75rem;
+$darkBlue: rgb(10,20,60);
+$disabled: rgb(80,80,80);
+$logoBlue: #3292ca;
+$paleBlue: rgb(140,190,240);
+$darkGreen: rgb(60,80,0);
+$highLightGreen: rgb(80,220,20);
+$lightBlue: rgb(240,240,255);
+$lightGreen: rgb(240,255,240);
+$darkRed: rgb(128, 17, 17);
+$lightRed: rgb(251, 220, 220);
+$primary: #601111;
+$darkSun: #fabf32;
+$lightSun: #fefdfa;
+$modal-background-background-color: #ccc6d1;
+$modal-content-width: auto;
+$sun: rgb(251, 220, 80);
+$borderHeadCol:$borderSmallWidth solid $lightGreen;
+$tabs-boxed-link-radius: 0.3rem;//@include tabsradius(5);
+$tableHeader-radius: 0.3rem;
+$tableHeaderHeight: 2rem;
+
+/**/
+$darkGradient1:linear-gradient($lightGreen,$darkGreen, $darkGreen);	 
+$darkGradient:linear-gradient($lightBlue 0%, $paleBlue 32%);	 
+
+@import "../bulma/bulma.sass";
+@import "../../node_modules/bulma-extensions/bulma-accordion/dist/css/bulma-accordion.sass";
+
+*{
+	border-collapse:collapse;
+	/*background-color:transparent!important;*/
+}
+ 
+html,body { 
+    /*font-family:Arial;*/
+	font-size:16px;
+	margin: 0;
+	overflow:hidden!important;
+	height:100%;
+	line-height:1;
+} 
+
+.rootBox
+{	
+	height:100%;
+	display:flex;
+	flex: auto;
+	flex-direction:column; 	
+} 
+h1 {
+	margin: 10px;
+} 
+.autoscroll
+{
+	overflow:auto;
+}
+.cCenter
+{
+	align-self:center;
+}
+.cRight
+{
+	align-self:flex-end;
+	text-align:right!important;
+}
+.tRight
+{
+	text-align:right;
+}
+.flex0
+{
+	display:flex;
+}
+.flex1
+{
+	display:flex;
+	flex-grow:1;
+}
+.flex-end
+{ 
+	align-self:flex-end;
+	flex-grow: 0;
+	vertical-align: t
+}
+.footer
+{
+	/*display:flex;
+	flex-direction:column;*/
+	padding:0rem 0.5rem 0rem;
+	border: $borderSmallWidth solid grey;
+}
+.footer .col
+{
+	margin:0px 0.5rem;
+	flex-direction:row;
+}
+/*.footer .icon
+{
+	margin:0.35rem 0.5rem 0rem;
+}*/
+.footer .column{
+	padding: 0.0rem;
+	white-space: nowrap;
+}
+.pBlock
+{
+	display:inline-block;
+	border: 1px solid #601111;
+	border-radius:0.5rem;
+	padding:0.5rem 0.8rem;
+}
+.react-datetime-picker--disabled
+{
+	background-color:transparent!important;
+}
+.react-datetime-picker__button 
+{
+	border:none!important;
+}
+.react-datetime-picker__button__input__input
+{
+	height:auto;
+}
+
+/* sticky header grid stuff display:flex;grid-template-columns:repeat( auto-fill, auto );*/
+
+.grid{
+	display:grid;
+	/*grid-auto-flow: dense;*/
+	grid-column-gap:0px;
+}
+	
+.grid>div
+{
+	padding: $cellPadding;
+	/*border-left:0.6px dotted transparent;*/
+}
+.grid.head
+{
+	grid-row: $tableHeaderHeight;
+	padding-right:17px;
+	padding-bottom:2px;
+}
+
+.fixed-grid-container 
+{
+  display:flex;
+  flex-direction:column;
+  flex-grow:1;
+  /*margin: 0.8rem 0rem 0.5rem 0.8rem
+   /* position: relative;could be absolute or relative */
+}
+
+.grid-container-inner {
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	border:1px solid grey;
+	border-style:none solid solid;
+}
+.gridHeadItem
+{
+	font-weight:bold;
+	padding: $headPadding!important;
+	/*display:flex;
+	flex-grow:1 0 auto;
+	justify-content:space-between;*/
+}
+
+.header-background {
+  /*background-color: #D5ECFF;#eee;flex: 1 0 auto;background-color: $darkRed;
+  color: $lightGreen; background-image:linear-gradient($lightGreen,$darkGreen, $darkGreen);	 */ 
+  background-origin:border-box;
+  background-image:$darkGradient;
+  border-color: grey;
+  border-radius: $tableHeader-radius $tableHeader-radius 0px 0px;
+  border-style: solid solid none solid;
+  border-width: 1px 1px 0px 1px;  
+}
+/*.head tr
+{
+	background-color: $darkRed;
+	background-color:transparent!important;
+	background-image:linear-gradient($lightGreen,$darkGreen, $darkGreen);	
+	background-origin:border-box;
+	
+}*/
+	
+.gridHeadItem:hover
+{
+	color: $sun;
+}
+    
+.sort-box
+{
+	margin:0 0 0.22rem 0.75rem;
+	align-self: flex-end;
+}
+
+/*span.sortArrow {
+	background: url(icons/bg.gif) 0 4px no-repeat transparent;
+	padding: 1px 10px;
+	line-height: 30px;
+}
+.headerSortUp span.sortArrow {
+	background: url(icons/asc.gif) 0 7px no-repeat transparent;
+}
+.headerSortDown span.sortArrow {
+	background: url(icons/desc.gif) 0 7px no-repeat transparent;
+}*/
+  
+/* END OF STICKY TABLE HEADER */
+
+/* flex */
+.col
+{
+	display:flex;
+	flex-direction:column;
+	flex-grow:0;
+	align-items: center;
+	/*border: 0.5px solid grey;*/
+}
+/*.col:nth-of-type(even)
+{
+	background-color:grey;
+}*/
+.formContainer
+{
+	flex-grow:1;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-self:center;
+}
+.formBox
+{
+	box-shadow:	0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+	display:flex;
+	flex-direction:column;
+	padding:1rem;
+	border-radius: 0.5rem;
+}
+.formField
+{
+	display:flex;
+	margin:0.8rem auto;
+}
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.fa-sign-out::before {
+	content: "\f2f5";
+}
+.userIcon:before {
+	content: '\f007';
+}
+.lockIcon:before {
+	font: 1.55rem "Font Awesome 5 Free";
+	content: '\f023';
+}
+.fa-user{
+	color:$logoBlue;
+}
+.fa-user-slash
+{color: $disabled}
+.formField label,
+.formField input
+{
+  border-radius: $tableHeader-radius;
+  border:1px solid #ccc;
+  padding: 1rem;
+  color: #3A3F44;  
+  
+}
+.formField input {
+  width: 100%;
+  padding:1rem;
+  background-color: #eeeeee;
+  border-left-style:none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;  
+  font-size: 1.25rem;  
+}
+.formField label {
+  background-color: eee;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-style:none;
+	padding: 1.15rem 1.25rem 0rem 1.25rem ;
+	font-size: 1.55rem;
+	color: $logoBlue;	
+}
+.formField input:focus, .formField input:hover {
+  background-color: #fff;
+}
+
+.formField input[type="submit"]{
+	border-radius: $tableHeader-radius;
+	color:$logoBlue;
+	font-size:1.4rem;
+	font-weight:bold;
+	padding:1rem;
+	background-color:$buttonSun;
+	border-color:transparent;
+}
+
+.overlaySubTitle
+{
+	font-size:1.22rem;
+	margin-top:-1.9rem;
+	text-align:right;
+	color: $logoBlue;
+}
+.statusbar
+ {
+	 display:flex;
+	 /*flex-grow:1; */
+	 justify-content:space-between;
+	 padding: 0.1rem;
+	 margin-bottom: 2px;
+ } 
+.topNav, .topNav ul{
+	/*display:flex;*/
+	justify-content:center;
+}
+
+.topNav 
+{
+	background-image:linear-gradient(white, $bgto);	
+}
+.topNav ul
+{
+	border:none;
+}
+.topNav li
+{
+	border-bottom:1px solid #dbdbdb;
+}
+.topNav .tabs 
+{
+	/*padding-top:0.3rem;
+	background:linear-gradient(#fff,#ddd);*/
+	display:flex;
+	font-size: 1.05rem;
+	flex:auto;
+	min-height: 0;
+}  
+
+.tabComponent
+{
+	display:flex;
+	flex-direction:column;
+	flex: auto;
+	margin:0.3rem 0px 0px;
+	min-height: 0;
+	background-image:linear-gradient(white, $bgto);
+}
+.tabComponentForm
+{
+	min-width: 80%;
+	display:flex;	
+	flex-grow:1;
+	margin:0.8rem 0 0 0.8rem;	
+	min-height: 0;
+}
+.tabComponentForm table,
+.tabComponentForm caption
+{border-radius: $tableHeader-radius $tableHeader-radius 0 0;}
+/*.tabComponentForm */
+.tabComponentForm .hero
+{
+	flex:1;
+}
+/*.tabNav2
+{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+}	*/
+.tabNav2 ul
+{
+	display:flex;
+}
+.tabNav2 .tabs ul li:first-child
+{
+	margin-left:1rem;
+}
+.tabNav2 .tabs ul li:last-child
+{
+	margin-right:1rem;
+}
+.tabNav2 .tabs
+{
+	line-height: 1.15;
+	background:solid transparent;
+	min-height: 0;
+}
+
+.tabContent2
+{
+	display:flex;
+	flex-direction:column;
+	flex: auto;
+	min-height: 0;	
+	padding:0px;/*.5rem 1.1rem;*/
+}
+.tabContent2 .columns
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;	
+	overflow:hidden;
+	/*flex-direction:column;overflow-y:auto;*/
+	flex: 1;
+	padding:0px;/*.5rem 1.1rem;*/
+	min-height: 0;
+}
+
+.tabs a 
+{
+	padding: .25rem 1rem;
+}
+
+.error, .error::placeholder { color: red!important;}
+
+.required:after{
+	color:red;
+	content:" *";
+}
+
+/*bulma overrides*/
+.table{margin-bottom: 0em;}
+.is-fullheight
+{
+	flex:auto;
+}
+.modal-card-foot {
+	justify-content:center;
+}
+.modal-card-title, .tCenter
+{
+	text-align:center;
+}
+.modal-card-body{
+    display: flex;	
+	padding:0px 0.8rem;
+	justify-content:center;
+}
+form.modal-card-body{
+	margin:0px
+}
+.modal-card-body.header{
+	/*padding:0.3rem 1.5rem 0px 1.5rem;*/
+	height: auto;
+	min-height:1.8rem;
+	margin: 0px 0px;
+
+}
+.header
+{
+	font-weight:bold;	
+	text-align:center;
+}
+/*.col.header{
+	flex-grow:1;
+	padding:0px;
+}*/
+.form-table-cell{
+	padding:0.1rem 0.3rem;
+	min-height:1.8rem;
+	display: flex;
+    align-items: center;
+    justify-items: center;
+}
+.form-table-cell *{
+	border:none;
+}
+/*	TABS NAV */
+.tabs{
+	overflow:visible;
+}
+
+.topNav .tabs li a
+{
+	border-bottom:0.3rem solid transparent;
+}
+.tabs li.is-active a
+{
+	color:$darkGreen!important;
+}
+.tabNav2 .tabs ul
+{
+	background-color:white;
+}
+.tabContent2 .table thead th:hover {
+	color:$sun!important;
+}
+.tabs.is-boxed li.is-active a
+{
+	border-bottom-color:white!important;
+	outline-style: none !important;
+}
+.topNav .tabs li.is-active a
+{
+	color:$darkGreen!important;
+	border-bottom-color:$darkSun!important;
+}
+
+/*FORMS * ELEMENTS*/
+form{
+	margin:1rem auto;
+}
+.form60, .modal-content
+{
+	display:flex;
+	margin: auto;
+	flex-direction:column;
+	width:auto;
+	align-content:center;
+}
+.formDataInRow
+{
+	flex-direction:row;
+	flex-wrap:nowrap;
+	display:flex;
+}
+.form60 .formField, .form60 .formDataInRow
+{
+	min-width:60rem;
+}
+.formField button
+{
+	padding:0.5rem;
+	font-size:1.1rem;
+	margin:0.3rem auto;
+	border-radius: $tableHeader-radius;
+}
+.formField label
+{
+	width:50%;
+}
+.formFieldInline
+{
+	flex:0 1 auto;
+	display:flex
+}
+
+/*side menu*/
+.is-right .menu
+{
+	margin: 0.8rem 0.5rem 0.5rem 0.8rem!important;
+}
+.menu .button
+{
+	width:100%;
+	margin:0.2rem auto;
+}
+.accordions .accordion .accordion-header
+{
+	background-color:#fff;
+	background-image:linear-gradient(white, $bgto);
+	border-top:0.6px solid #dbdbdb;
+	border-right:0.6px solid #dbdbdb;
+	border-left:0.6px solid #dbdbdb;
+	color:$darkBlue;
+}
+
+input[name="accordion-select"], .panel-block {
+  display:none;
+}
+
+
+label.panel-heading {
+  cursor: pointer;
+  display: block;
+}
+
+/* the magic */
+#sMenuPanel-1:checked ~ .panel > .body-1,
+#sMenuPanel-2:checked ~ .panel > .body-2,
+#sMenuPanel-3:checked ~ .panel > .body-3,
+#sMenuPanel-4:checked ~ .panel > .body-4,
+#sMenuPanel-5:checked ~ .panel > .body-5
+{
+	display: flex;
+	flex-grow: 0;
+	flex-direction:column;
+}
+
+.panel-heading 
+{
+	font-size:1.15rem;
+}
+
+.panel-block
+{
+	overflow-y: auto;
+}
+
+.sidebar
+{
+	overflow-x: hidden;
+    overflow-y: auto;
+    /*min-height: 0px;
+     height: 100%;
+    padding-bottom: #{$statusBarHeight}px; */
+}
+
+/*tables*/
+.table{
+	border-spacing: 1px;
+    border:none;
+}
+
+.table *{
+	border:none;
+}
+
+.table.head
+{
+	background-color:transparent!important;
+	text-shadow: 0.2rem 0.2rem 1.1rem #333;
+	border:none;
+}
+.trHeader
+{
+	background-color:#777;
+	border-radius: $tableHeader-radius $tableHeader-radius 0px 0px;
+	color:#fff;
+	
+}
+form table{
+	border: 1px solid #777;
+	margin: auto;
+}
+/*.table tr{
+	display:flex;
+}*/
+.th-box
+{
+	margin:0.5rem 0.75rem;
+}
+.table td, .table th{
+	border: none;
+	border-left: $borderCol;
+	white-space: nowrap;
+}
+
+.table thead th{
+	color: $lightSun;
+	padding:0px;
+	border-left:$borderHeadCol;
+	white-space:nowrap;
+}
+
+.table thead th:first
+{
+	border-top-left-radius: 0.3rem;
+	border-color: transparent;
+}
+
+.table tr.is-selected
+{
+	background-color: $sun;
+	color:$darkBlue;
+}
+.even
+{
+	background-color:#eee;
+}
+
+.odd
+{
+	background-color:#ddd;
+}
+
+form td, form caption
+{
+	padding: 0.32rem;
+	vertical-align: middle;
+}
+
+/* OVERFLOW */
+
+.xAuto
+{
+	overflow-x: auto!important;
+}
+
+.yAuto
+{
+	overflow-y: auto;
+}
+.zeroH
+{
+	height:0px;
+	position:relative;
+}
+.loader-screen
+{
+	flex: 1 0 100%;
+	/*border:1px solid green;*/
+	flex-direction:column;
+	justify-content: center;
+	align-items: stretch;
+	display: flex;
+}
+.loader-box{
+	align-items: center;
+
+	/*flex: 1 0 100%;
+	flex-direction:row;
+	border:1px solid grey;*/
+}
+.loader-content
+{
+	margin: auto;
+	padding: 2rem;
+	height: 6rem;
+	text-align: center;
+}

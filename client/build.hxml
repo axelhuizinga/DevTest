@@ -1,0 +1,26 @@
+-lib haxe-loader
+-lib history
+-lib hxbit
+-lib react-next
+-lib react-types
+-lib react-router-4
+-lib redux
+-lib d3-extern
+-lib CommentString
+-lib reselect
+-lib event-types 
+-lib js-object
+-lib json2object
+-lib tink_core
+
+-cp /opt/src/lib
+-cp ../lib
+-cp lib
+-cp src
+
+-js ../httpdocs/js/app.js
+-dce std
+--debug
+#--no-traces
+#-D eval-stack
+-main Go
