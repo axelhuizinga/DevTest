@@ -87,7 +87,7 @@ class DevTest extends ReactComponentOf<DataProps,CompState>
 		if(_trace) trace(Reflect.fields(state));
 		return jsx('
 		<>
-			<div className="tabNav2" >
+			<div className="tabContent2" >
 				HelloWorld
 			</div>
 			<$StatusBar ${...props}/>
