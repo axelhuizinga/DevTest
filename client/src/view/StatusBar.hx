@@ -54,6 +54,7 @@ class StatusBar extends ReactComponentOf<StatusBarProps,StatusBarState>
 	
 	public function new(?props:StatusBarProps,?context:Dynamic)
 	{
+		trace('setState:' + Reflect.field(this,'setState'));
 		state = ReactUtil.copy(props, {date:Date.now()});
 		super(props);
 	}

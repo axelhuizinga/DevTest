@@ -28,7 +28,7 @@ class DbUser implements hxbit.Serializable{
 	@:s public var user_name:String;
 
 	public function new(p:Dynamic){		
-		trace(p);
+		//trace(p);
 		//Out.dumpVar(p);
 		for(f in Type.getInstanceFields(Type.getClass(this))){
 			switch (f){
