@@ -14,3 +14,8 @@ haxelib newrepo
 haxelib install build.hxml
 
 yarn start
+
+open in your browser: 
+http://localhost:8000/DevTest
+
+watch the dev console - after a minute you should see the first Uncaught TypeError: _gthis.setState is not a function
