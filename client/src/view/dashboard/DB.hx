@@ -17,7 +17,7 @@ import json2object.JsonParser;
 import js.html.FormDataIterator;
 import js.html.HTMLCollection;*/
 import js.lib.Promise;
-import me.cunity.debug.Out;
+import debug.Out;
 import react.ReactComponent;
 import react.ReactEvent;
 import react.ReactMacro.jsx;

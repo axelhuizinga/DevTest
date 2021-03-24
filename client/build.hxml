@@ -13,7 +13,6 @@
 -lib json2object
 -lib tink_core
 
--cp /opt/src/lib
 -cp ../lib
 -cp lib
 -cp src
@@ -21,6 +20,7 @@
 -js ../httpdocs/js/app.js
 -dce std
 --debug
+-D react_runtime_warnings
 #--no-traces
 #-D eval-stack
 -main Go

@@ -19,7 +19,7 @@ import history.Location;
 import history.TransitionManager;
 import js.Browser;
 
-import me.cunity.debug.Out;
+import debug.Out;
 import view.UiView;
 import action.AppAction;
 import action.ConfigAction;

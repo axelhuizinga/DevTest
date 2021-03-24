@@ -5,7 +5,7 @@ import haxe.Json;
 import haxe.Serializer;
 import haxe.http.HttpJs;
 import js.html.XMLHttpRequest;
-import me.cunity.debug.Out;
+import debug.Out;
 import state.AppState;
 import loader.AjaxLoader;
 import react.React;

@@ -1,7 +1,7 @@
 package view;
 
 
-import me.cunity.debug.Out;
+import debug.Out;
 import react.ReactUtil;
 import react.ReactComponent.ReactFragment;
 import haxe.Timer;
@@ -47,6 +47,8 @@ typedef StatusBarState =
 }
 
 @:connect
+@:autoBuild(react.ReactMacro.buildComponent())
+@:autoBuild(react.ReactTypeMacro.alterComponentSignatures())
 class StatusBar extends ReactComponentOf<StatusBarProps,StatusBarState>	
 {
 	var mounted:Bool = false;

@@ -16,7 +16,7 @@ import js.html.TableCellElement;
 import js.html.TableElement;
 import js.html.TableRowElement;
 import js.html.DivElement;
-import me.cunity.debug.Out;
+import debug.Out;
 import react.data.ReactDataGrid;
 import react.React;
 import react.ReactRef;

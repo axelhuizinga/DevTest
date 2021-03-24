@@ -17,7 +17,7 @@ import haxe.Json;
 import js.html.XMLHttpRequest;
 import haxe.http.HttpJs;
 import macrotools.Macro.model;
-import me.cunity.debug.Out;
+import debug.Out;
 import state.AppState;
 import react.ReactEvent;
 import react.Fragment;

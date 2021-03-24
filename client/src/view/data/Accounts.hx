@@ -11,7 +11,7 @@ import haxe.ds.StringMap;
 import haxe.Json;
 import js.html.XMLHttpRequest;
 import haxe.http.HttpJs;
-import me.cunity.debug.Out;
+import debug.Out;
 import state.AppState;
 import react.Fragment;
 import react.ReactComponent;

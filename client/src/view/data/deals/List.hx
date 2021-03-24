@@ -14,7 +14,7 @@ import model.deals.DealsModel;
 import state.AppState;
 import haxe.Constraints.Function;
 import haxe.ds.IntMap;
-import me.cunity.debug.Out;
+import debug.Out;
 import react.ReactComponent;
 import react.ReactEvent;
 import react.ReactMacro.jsx;

@@ -11,7 +11,7 @@ import action.async.LivePBXSync;
 import state.AppState;
 import haxe.ds.Map;
 import loader.BinaryLoader;
-import me.cunity.debug.Out;
+import debug.Out;
 import model.Contact;
 import react.ReactComponent;
 import react.ReactEvent;

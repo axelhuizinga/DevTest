@@ -3,7 +3,7 @@ import haxe.Log;
 import js.Browser;
 import js.Cookie;
 import js.html.DivElement;
-import me.cunity.debug.Out;
+import debug.Out;
 import react.ReactDOM;
 import react.ReactMacro.jsx;
 

@@ -1,6 +1,6 @@
 package store;
 
-import me.cunity.debug.Out;
+import debug.Out;
 import history.Location;
 import history.History;
 import js.Browser;

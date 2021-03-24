@@ -12,7 +12,7 @@ import js.html.FormElement;
 import js.html.HTMLCollection;
 import js.html.HTMLOptionsCollection;
 import js.Browser;
-import me.cunity.debug.Out;
+import debug.Out;
 import react.ReactComponent;
 import react.ReactEvent;
 import react.ReactMacro.jsx;

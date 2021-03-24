@@ -1,6 +1,6 @@
 package action.async;
 
-import me.cunity.debug.Out;
+import debug.Out;
 import js.lib.Promise;
 import db.DbRelation;
 import db.DbUser;

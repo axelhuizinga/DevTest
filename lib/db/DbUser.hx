@@ -1,5 +1,5 @@
 package db;
-import me.cunity.debug.Out;
+import debug.Out;
 import hxbit.Serializable;
 
 class DbUser implements hxbit.Serializable{

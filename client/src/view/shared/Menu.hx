@@ -6,7 +6,7 @@ import action.LocationAction;
 import js.html.ButtonElement;
 import js.html.Event;
 import haxe.CallStack;
-import me.cunity.debug.Out;
+import debug.Out;
 //import view.shared.io.DataAccessForm;
 import js.Browser;
 import js.html.DivElement;

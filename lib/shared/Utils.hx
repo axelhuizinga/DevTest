@@ -9,7 +9,7 @@ import redux.Redux.Dispatch;
 import haxe.Constraints.Function;
 import react.ReactDOM;
 import haxe.ds.StringMap;
-import me.cunity.debug.Out;
+import debug.Out;
 
 
 class Utils 

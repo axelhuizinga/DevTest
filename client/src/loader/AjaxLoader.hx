@@ -3,7 +3,7 @@ import haxe.ds.StringMap;
 import haxe.http.HttpJs;
 import haxe.Json;
 import react.ReactComponent;
-import me.cunity.debug.Out;
+import debug.Out;
 /**
  * ...
  * @author axel@cunity.me
