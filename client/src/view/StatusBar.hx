@@ -47,8 +47,6 @@ typedef StatusBarState =
 }
 
 @:connect
-@:autoBuild(react.ReactMacro.buildComponent())
-@:autoBuild(react.ReactTypeMacro.alterComponentSignatures())
 class StatusBar extends ReactComponentOf<StatusBarProps,StatusBarState>	
 {
 	var mounted:Bool = false;
